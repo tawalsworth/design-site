@@ -1,21 +1,29 @@
-
 <template>
- 
+ <div class="parentColumn">
   <ul class="images">
     <li
       v-for="image in images"
       v-bind:key="image.sys.id"
       class="image"
     > 
+      <img :src="image.galleyImage.url" />
         <div class="image-info">
-          <div class="">{{ image.imageTitle }}
-          test</div>
+          <!-- <div class="">{{ image.galleyImage }}
+          test</div> -->
+        <!-- <img
+        :src={{ image.fileName }}
+        :srcset="imageSrcset"
+      > -->
+          <!-- <img v-bind="{{ image.galleyImage }}"/> -->
+
+            <img :src="image.galleryImage" />
+
          <div class="image-name">
-           <p></p>
+           <div class="">{{ image.imageTitle }}
+          test</div>
          </div>
          <div class="image-content">
-           <!-- <p class="image-theater">{{ images.imageTitle }} test 2</p>
-           <p class="image-location">{{ image.postTime }} test 3</p> -->
+           {{ image.postTime }}
          </div>
        </div>
 
@@ -23,13 +31,15 @@
 
     </li>
   </ul>
-
+</div>
 </template>
 
 
 <script>
-// import Shows from "./components/Shows.vue";
-// import Hero from "./components/Hero.vue";
+
+
+
+
 export default {
   data() {
     return {
@@ -52,7 +62,13 @@ export default {
             sys {
               id
             }
+            
             imageTitle
+            postTime
+            galleyImage{
+              fileName
+              url
+            }
           }
         }
       }`;
@@ -83,11 +99,15 @@ export default {
 </script>
 
 <style>
+img{
+  max-height: 20%;
+  max-width: 20%; 
+}
 
 body {
   margin: 0;
   font-family: "Verdana";
-  background-color: purple;
+  background-color: whitesmoke;
   color: black;
 }
 
@@ -115,4 +135,19 @@ ul {
     display: inline-block;
   }
 } */
+
+.parentColumn {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white;
+    }
+    ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+     
+    };
 </style>
