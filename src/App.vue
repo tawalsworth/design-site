@@ -1,5 +1,7 @@
 <template>
+
  <div class="parentColumn">
+   <header></header>
   <ul class="images">
     <li
       v-for="image in images"
@@ -8,13 +10,6 @@
     > 
       <img :src="image.galleyImage.url" />
         <div class="image-info">
-          <!-- <div class="">{{ image.galleyImage }}
-          test</div> -->
-        <!-- <img
-        :src={{ image.fileName }}
-        :srcset="imageSrcset"
-      > -->
-          <!-- <img v-bind="{{ image.galleyImage }}"/> -->
 
             <img :src="image.galleryImage" />
 
@@ -36,20 +31,18 @@
 
 
 <script>
-
-
-
+import Header from './components/Header.vue'
 
 export default {
+    components: {
+     'header':Header
+  },
   data() {
     return {
         images: []
       };
   },
-  components: {
-    // Shows,
-    // Hero
-  },
+
   async created() {
     this.images = await this.getImages();
   },
