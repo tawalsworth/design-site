@@ -1,7 +1,22 @@
 <template>
-
- <div class="parentColumn">
-   <header></header>
+<div>
+  <div class="wrapper">
+    <div class="">
+      <my-header/>
+    </div>
+    <div class="mt-10">
+      <main-hero/>
+    </div>
+    <div class="mt-10">
+      <gallery/>
+    </div>
+    <div class="mt-10">
+      <footer-main/>
+    </div>
+  </div>
+</div>
+ <!-- <div class="parentColumn">
+   
   <ul class="images">
     <li
       v-for="image in images"
@@ -22,73 +37,78 @@
          </div>
        </div>
 
-
-
     </li>
   </ul>
-</div>
+</div> -->
 </template>
 
 
 <script>
 import Header from './components/Header.vue'
+import ImageGallery from './components/ImageGallery.vue'
+import Footer from './components/Footer.vue'
+import Hero from './components/Hero.vue'
 
 export default {
     components: {
-     'header':Header
-  },
-  data() {
-    return {
-        images: []
-      };
-  },
-
-  async created() {
-    this.images = await this.getImages();
-  },
-
-  methods: {
-    getImages: async () => {
-      const query = `{
-        imageCollection {
-          items {
-            sys {
-              id
-            }
-            
-            imageTitle
-            postTime
-            galleyImage{
-              fileName
-              url
-            }
-          }
-        }
-      }`;
-
-      const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/1s0vh88z19o5`;
-      const fetchOptions = {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer sfA2xhxNtzxuxCYlfTGKvPqkfdTOPq_qBl3zgoilSis`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ query })
-      };
-      try {
-        const response = await fetch(fetchUrl, fetchOptions).then(response =>
-          response.json()
-        );
-        console.log(response.data.imageCollection.items);
-        return response.data.imageCollection.items;
-      } catch (error) {
-        throw new Error("Could not receive the data from Contentful!");
-      }
-
-    }
-    
+     'my-header':Header,
+     'gallery':ImageGallery,
+     'footer-main':Footer,
+     'main-hero':Hero
   }
- };
+}
+//   data() {
+//     return {
+//         images: []
+//       };
+//   },
+
+//   async created() {
+//     this.images = await this.getImages();
+//   },
+
+//   methods: {
+//     getImages: async () => {
+//       const query = `{
+//         imageCollection {
+//           items {
+//             sys {
+//               id
+//             }
+            
+//             imageTitle
+//             postTime
+//             galleyImage{
+//               fileName
+//               url
+//             }
+//           }
+//         }
+//       }`;
+
+//       const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/1s0vh88z19o5`;
+//       const fetchOptions = {
+//         method: "POST",
+//         headers: {
+//           Authorization: `Bearer sfA2xhxNtzxuxCYlfTGKvPqkfdTOPq_qBl3zgoilSis`,
+//           "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({ query })
+//       };
+//       try {
+//         const response = await fetch(fetchUrl, fetchOptions).then(response =>
+//           response.json()
+//         );
+//         console.log(response.data.imageCollection.items);
+//         return response.data.imageCollection.items;
+//       } catch (error) {
+//         throw new Error("Could not receive the data from Contentful!");
+//       }
+
+//     }
+    
+//   }
+//  };
 </script>
 
 <style>
