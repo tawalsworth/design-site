@@ -1,7 +1,8 @@
 <template>
+
  <div class="parentColumn">
    
-  <ul class="images">
+  <ul class="images imageSet">
     <li
       v-for="image in images"
       v-bind:key="image.sys.id"
@@ -23,7 +24,8 @@
 
     </li>
   </ul>
-</div>
+  </div>
+
 </template>
 
 
@@ -121,14 +123,30 @@ ul {
     display: inline-block;
   }
 } */
+.portfolio-grid {
+  display: grid;
+  margin-top: var(--section-spacing-2);
+  grid-template: 1fr / 1fr;
+  grid-gap: var(--section-spacing-1);
+  width: 100%;
+  height: 100%;
+}
+
+
+.image{
+  display: inline-block;
+  width: 300px;
+}
 
 .parentColumn {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    background-color: white;
+    display: grid;
+    margin-top: var(--section-spacing-2);
+    grid-template: 1fr / 1fr;
+    grid-gap: var(--section-spacing-1);
+    width: 100%;
+    height: 100%;
     }
     ul {
     margin: 0;
@@ -136,4 +154,15 @@ ul {
     padding: 0;
      
     };
+  .imageSet ::after {
+    display: inline-block;
+    display: grid;
+        /* margin-top: 30px; */
+    margin-top: var(--section-spacing-2);
+    grid-template: 2fr 2fr / 2fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: none;
+    }
+    
 </style>
