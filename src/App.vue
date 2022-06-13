@@ -112,7 +112,7 @@ export default {
 </script>
 
 <style>
-img{
+.logo{
   max-height: 20%;
   max-width: 20%; 
 }
