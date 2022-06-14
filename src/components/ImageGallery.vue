@@ -11,15 +11,17 @@
 
       <img :src="image.galleyImage.url" />
         
-        <div class="image-info">
+        <div class="image-info justify-self-center">
             <img :src="image.galleryImage" />
-            <div class="inline-block">
+            <div class="inline-block tagBackground pt-2 pb-2">
                   <div class="image-name">
-                    <div class="">{{ image.imageTitle }}
+                    <div class="title">{{ image.imageTitle }}
                     test</div>
                   </div>
                   <div class="image-content">
-                    {{ image.postTime }}
+                    <div class="time">
+                      {{ image.postTime }}
+                    </div>
                   </div>
             </div>
        </div>
@@ -90,12 +92,27 @@ export default {
 
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&family=Poppins:wght@100;200;300;500&display=swap');
 
 body {
   margin: 0;
   font-family: "Verdana";
   background-color: whitesmoke;
   color: black;
+}
+
+.title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.time{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 300;
 }
 
 .portfolio-grid {
@@ -122,6 +139,12 @@ body {
   display: inline-block;
   width: 300px;
   background-color: white;
+}
+
+.tagBackground{
+  width: 100%;
+  background-color: white;
+
 }
 
 .parentColumn {

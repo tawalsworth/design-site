@@ -120,7 +120,7 @@ export default {
 body {
   margin: 0;
   font-family: "Verdana";
-  background-color: whitesmoke;
+  background-color: white;
   color: black;
 }
 
