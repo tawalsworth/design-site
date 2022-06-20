@@ -2,9 +2,9 @@
 <div>
   <div class="wrapper">
     <div class="">
-      <my-header/>
+      <navi/>
     </div>
-    <div class="mt-10">
+    <div>
       <main-hero/>
     </div>
     <div class="mt-10">
@@ -44,14 +44,14 @@
 
 
 <script>
-import Header from './components/Header.vue'
+import Nav from './components/Navigation.vue'
 import ImageGallery from './components/ImageGallery.vue'
 import Footer from './components/Footer.vue'
 import Hero from './components/Hero.vue'
 
 export default {
     components: {
-     'my-header':Header,
+     'navi':Nav,
      'gallery':ImageGallery,
      'footer-main':Footer,
      'main-hero':Hero

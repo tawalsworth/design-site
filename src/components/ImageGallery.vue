@@ -2,11 +2,11 @@
 <div class="inner-container ">
  <div class="portfolio-grid">
    
-  <ul class="images imageSet grid gap-4 grid-cols-3 grid-rows-3">
+  <ul class="images justify-self-center imageSet grid md:gap-4 md:grid-cols-4 md:grid-rows-3">
     <li
       v-for="image in images"
       v-bind:key="image.sys.id"
-      class="image my-4"
+      class="image mx-4 my-4"
     >
 
       <img :src="image.galleyImage.url" />
@@ -15,12 +15,11 @@
             <img :src="image.galleryImage" />
             <div class="inline-block tagBackground pt-2 pb-2">
                   <div class="image-name">
-                    <div class="title">{{ image.imageTitle }}
-                    test</div>
+                    <div class="title">{{ image.imageTitle }}</div>
                   </div>
                   <div class="image-content">
                     <div class="time">
-                      {{ image.postTime }}
+                      {{image.postTime}}
                     </div>
                   </div>
             </div>
@@ -137,7 +136,6 @@ body {
 
 .image{
   display: inline-block;
-  width: 300px;
   background-color: white;
 }
 

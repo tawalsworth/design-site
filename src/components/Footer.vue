@@ -1,6 +1,11 @@
 <template>
-  <footer>Footer</footer>
-
+<div class="footerBackground">
+  <footer>
+      <p className={FooterStyles.footer__copyright}>
+        © {Config.site.owner} {date.getFullYear()} All Rights Reserved.
+      </p>
+  </footer>
+</div>
 </template>
 
 <script>
@@ -10,5 +15,11 @@
 </script>
 
 <style>
+.footerBackground{
+  background-color: black;
+}
+footer{
+  color: white; 
+}
 
 </style>
