@@ -1,5 +1,13 @@
 <template>
-  <footer>Footer</footer>
+
+  <footer >
+  <div class="p-4 text-center items-center justify-center bg-gray-800 text-white">
+    <span>All Rights Reserved</span>
+
+  </div>
+    
+    
+  </footer>
 
 </template>
 
