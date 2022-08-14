@@ -1,13 +1,5 @@
 <template>
-
-  <footer >
-  <div class="p-4 text-center items-center justify-center bg-gray-800 text-white">
-    <span>All Rights Reserved</span>
-
-  </div>
-    
-    
-  </footer>
+  <footer>Footer</footer>
 
 </template>
 
@@ -18,5 +10,11 @@
 </script>
 
 <style>
+.footerBackground{
+  background-color: black;
+}
+footer{
+  color: white; 
+}
 
 </style>
